@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import useBookmarkManager from "./BookmarkState"
 import Reset from "./components/auth/Reset";
+import Navbar from "./components/Navbar";
 
 function App() {
   const darkMode = useBookmarkManager(state => state.darkMode)
@@ -9,9 +10,14 @@ function App() {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
   }, [darkMode])
   return (
-    <div className="bg-neutral100 dark:bg-neutral900D w-full min-h-screen flex font-manrope">
-      <Reset/>
-    </div>
+    <main className="bg-neutral100 dark:bg-neutral900D w-full min-h-screen flex font-manrope">
+
+      <div className="flex flex-col flex-1">
+        <Navbar/>
+
+      </div>
+      
+    </main>
   )
 }
 
