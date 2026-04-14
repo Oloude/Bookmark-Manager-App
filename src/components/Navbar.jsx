@@ -1,12 +1,15 @@
 import { FaPlus } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
 import { IoIosMenu } from "react-icons/io";
+import useBookmarkManager from "../BookmarkState";
 
 function Navbar() {
+    const openSidebar = useBookmarkManager(state => state.openSidebar)
+    
   return (
-    <nav className="px-4 py-3 bg-neutral0 border-b border-neutral300 flex justify-between items-center gap-3 lg:fixed w-full">
+    <nav className="px-4 py-3 bg-neutral0 border-b border-neutral300 flex justify-between items-center gap-3 md:px-8 md:py-4 fixed w-full lg:w-auto lg:left-74 lg:right-0">
         <div className="flex items-center gap-2.5">
-            <button className="border border-neutral400 bg-neutral0 p-2.5 rounded-md lg:hidden"><IoIosMenu className="w-5 h-5 text-neutral900"/></button>
+            <button onClick={openSidebar} className="border border-neutral400 bg-neutral0 p-2.5 rounded-md lg:hidden"><IoIosMenu className="w-5 h-5 text-neutral900"/></button>
             <div className="border border-neutral400 rounded-md flex items-center gap-2 p-2.5 max-w-80">
                 <FiSearch className="w-5 h-5 text-neutral800 shrink-0"/>
                 <input type="search" name="" id="" className="w-full text-preset4m text-neutral800" placeholder="Search by title..." />
