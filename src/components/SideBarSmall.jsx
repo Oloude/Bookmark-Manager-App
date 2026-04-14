@@ -2,10 +2,11 @@ import { RiHome6Line } from "react-icons/ri"
 import useBookmarkManager from "../BookmarkState"
 import { HiOutlineArchiveBox } from "react-icons/hi2"
 
-function Sidebar() {
+function SidebarSmall() {
     const darkMode = useBookmarkManager(state => state.darkMode)
   return (
-    <div className='hidden flex-col w-74 bg-neutral0 border border-neutral300 gap-4 lg:flex'>
+    <div className="w-full bg-overlay/70 min-h-screen h-full absolute top-0 left-0 z-20 lg:hidden">
+    <div className='flex flex-col w-74 bg-neutral0 border border-neutral300 gap-4 h-full'>
         <header className="px-5 pt-5 pb-2.5"><img src={darkMode ? 'images/logo-dark-theme.svg' :"/images/logo-light-theme.svg"} alt="" /></header>
         <section className="px-4 pb-5 flex flex-col gap-4">
             <div className="flex flex-col w-full">
@@ -29,7 +30,8 @@ function Sidebar() {
 
         </section>
     </div>
+    </div>
   )
 }
 
-export default Sidebar
+export default SidebarSmall
