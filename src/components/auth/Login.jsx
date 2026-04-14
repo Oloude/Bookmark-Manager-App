@@ -1,0 +1,38 @@
+import useBookmarkManager from "../../BookmarkState"
+
+function Login() {
+    const darkMode = useBookmarkManager(state => state.darkMode)
+  return (
+    <section className="w-full min-h-screen flex items-center justify-center px-4 py-30">
+        <div className="px-3 py-8 rounded-xl bg-neutral0 flex flex-col gap-8 shadow-login w-full max-w-md md:px-8 md:py-10 dark:border dark:border-neutral500D dark:bg-neutral800D">
+            <img src={darkMode ? 'images/logo-dark-theme.svg' :"/images/logo-light-theme.svg"} alt=""  className="h-8 w-53.5"/>
+            <div className="space-y-1.5">
+                <h1 className="text-preset1 text-neutral900 dark:text-neutral0">Log in to your account</h1>
+                <p className="text-preset4m text-neutral800 dark:text-neutral100D">Welcome back! Please enter your details.</p>
+            </div>
+            <form action="" className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1.5">
+                    <label htmlFor="email" className="text-preset4m text-neutral900 dark:text-neutral0">Email</label>
+                    <input type="email" name="" id="email" className="p-3 rounded-lg border border-neutral500 bg-neutral0 text-neutral900 text-preset4m inset-shadow-input outline-none dark:bg-neutral600D dark:border-neutral300D dark:text-neutral100D" />
+                    <span></span>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                    <label htmlFor="password" className="text-preset4m text-neutral900 dark:text-neutral0">Password</label>
+                    <input type="password" name="" id="password" className="p-3 rounded-lg border border-neutral500 bg-neutral0 text-neutral900 text-preset4m inset-shadow-input outline-none dark:bg-neutral600D dark:border-neutral300D dark:text-neutral100D" />
+                    <span></span>
+                </div>
+                <button className="text-preset3 text-neutral0 bg-teal700 px-4 py-3 rounded-lg inset-shadow-input border-image dark:text-neutral0">Log in</button>
+            </form>
+            <div className="flex flex-col gap-3 items-center">
+                <p className="text-preset4m text-neutral800 dark:text-neutral100D">Forgot password? <span className="text-neutral900 dark:text-neutral0">Reset </span></p>
+                <p className="text-preset4m text-neutral800 dark:text-neutral100D">Don’t have an account? <span className="text-neutral900 dark:text-neutral0">Sign up </span></p>
+            </div>
+
+
+        </div>
+
+    </section>
+  )
+}
+
+export default Login
