@@ -13,10 +13,19 @@ const useBookmarkManager = create((set) => {
     darkMode: false,
     isSidebarOpen: false,
     tags: getTags(bookmarkData),
+    showProfileDropdown: false,
+    showCardActionsDropdown: false,
+    activeCardId : null,
 
     openSidebar: () => set({ isSidebarOpen: true }),
     closeSidebar: () => set({ isSidebarOpen: false }),
     toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
+    toggleProfileDropdown: () =>
+      set((state) => ({ showProfileDropdown: !state.showProfileDropdown })),
+    toggleCardActionsDropdown: (id) =>
+      set((state) => ({
+        showCardActionsDropdown: state.showCardActionsDropdown === id ? null : id ,
+      })),
   };
 });
 export default useBookmarkManager;

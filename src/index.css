@@ -28,6 +28,8 @@
   --color-red800: #cb0a04;
   --color-slate100: #4D4D4D;
   --color-overlay : #131313;
+  --color-slate200: #e9eaeb;
+  
 
   --text-preset1: 24px;
   --text-preset1--line-height: 140%;
@@ -62,6 +64,7 @@
   --text-preset5--font-weight: 500;
 
   --shadow-login : 0 2px 4px rgba(21, 21, 21, 0.06);
+  --shadow-profile : 0 6px 14px 0 rgba(34, 38, 39, 0.1);
   --inset-shadow-input : inset 0 0 1px rgba(34, 38, 39, 0.12);
 }
 
