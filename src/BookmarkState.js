@@ -16,6 +16,10 @@ const useBookmarkManager = create((set) => {
     showProfileDropdown: false,
     showCardActionsDropdown: false,
     activeCardId : null,
+    isShowArchived : false,
+    isShowAll : true,
+    showSortDropdown:false,
+    sort: 'Recently added',
 
     openSidebar: () => set({ isSidebarOpen: true }),
     closeSidebar: () => set({ isSidebarOpen: false }),
@@ -26,6 +30,10 @@ const useBookmarkManager = create((set) => {
       set((state) => ({
         showCardActionsDropdown: state.showCardActionsDropdown === id ? null : id ,
       })),
+     showArchived : () => set(state => ({isShowArchived : true, isShowAll : false})), 
+     showAll : () => set(state => ({isShowArchived : false, isShowAll : true})), 
+    toggleSortDropdown : () => set(state => ({showSortDropdown : !state.showSortDropdown})), 
+    handleSortChange : (sort) => set(state => ({sort : sort})),
   };
 });
 export default useBookmarkManager;

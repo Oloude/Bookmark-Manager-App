@@ -10,7 +10,7 @@ function Navbar() {
     const toggleProfileDropdown = useBookmarkManager(state => state.toggleProfileDropdown);
     
   return (
-    <nav className="px-4 py-3 bg-neutral0 dark:bg-neutral800D border-b border-neutral300 dark:border-neutral500D flex justify-between items-center gap-3 md:px-8 md:py-4 fixed w-full lg:w-auto lg:left-74 lg:right-0">
+    <nav className="px-4 py-3 bg-neutral0 dark:bg-neutral800D border-b border-neutral300 dark:border-neutral500D flex justify-between items-center gap-3 md:px-8 md:py-4 fixed w-full lg:w-auto lg:left-74 lg:right-0 z-30">
         <div className="flex items-center gap-2.5">
             <button onClick={openSidebar} className="border border-neutral400 dark:border-neutral400D bg-neutral0 dark:bg-neutral800D p-2.5 rounded-md lg:hidden"><IoIosMenu className="w-5 h-5 text-neutral900 dark:text-neutral0"/></button>
             <div className="border border-neutral400 dark:border-neutral500D dark:bg-neutral600D rounded-md flex items-center gap-2 p-2.5 max-w-80">
