@@ -6,6 +6,11 @@ import Sidebar from "./components/Sidebar";
 import SidebarSmall from "./components/SideBarSmall";
 import Header from "./components/Header";
 import Bookmarks from "./components/Bookmarks";
+import DeleteModal from "./components/DeleteModal";
+import UnarchiveModal from "./components/UnarchiveModal";
+import ArchiveModal from "./components/ArchiveModal";
+import AddBookmarkModal from "./components/AddBookmarkModal";
+import EditBookmarkModal from "./components/EditBookmarkModal";
 
 function App() {
   const darkMode = useBookmarkManager(state => state.darkMode);
@@ -18,6 +23,7 @@ function App() {
   return (
     <main className="bg-neutral100 dark:bg-neutral900D w-full min-h-screen flex font-manrope">
       {isSidebarOpen && <SidebarSmall/>}
+      <EditBookmarkModal/>
       <Sidebar/>
       <div className="flex flex-col flex-1">
         <Navbar/>
