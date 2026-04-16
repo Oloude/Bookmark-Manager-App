@@ -7,6 +7,7 @@ function Bookmarks() {
     const isShowArchived = useBookmarkManager(state => state.isShowArchived);
     const isShowAll = useBookmarkManager(state => state.isShowAll);
     const sort = useBookmarkManager(state => state.sort);
+    const selectedTag = useBookmarkManager(state => state.selectedTag);
 
     let sorted = bookmarkData.sort((a,b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     const [bookmarks, setBookMarks ] = useState(sorted);

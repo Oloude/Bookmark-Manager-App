@@ -4,7 +4,7 @@ import { MdClose } from "react-icons/md"
 function DeleteModal() {
   return (
     <section className="fixed w-full h-screen top-0 left-0 z-80 bg-black/60 flex items-center justify-center px-4 dark:bg-neutral900D/50">
-        <div className="rounded-2xl p-6 flex flex-col gap-6 bg-neutral0 max-w-112.5 w-full relative dark:bg-neutral800D dark:border-neutral500D">
+        <div className="rounded-2xl p-5 md:p-6 flex flex-col gap-6 bg-neutral0 max-w-112.5 w-full relative dark:bg-neutral800D dark:border-neutral500D">
             <button className="absolute top-2 right-2"><MdClose className="w-5 h-5 text-neutral900 dark:text-neutral0"/></button>
             <div className="flex flex-col gap-2">
                 <h2 className="text-preset1 text-neutral900 dark:text-neutral0">Delete bookmark</h2>

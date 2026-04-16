@@ -20,6 +20,7 @@ const useBookmarkManager = create((set) => {
     isShowAll : true,
     showSortDropdown:false,
     sort: 'Recently added',
+    selectedTag : [],
 
     openSidebar: () => set({ isSidebarOpen: true }),
     closeSidebar: () => set({ isSidebarOpen: false }),
@@ -34,6 +35,7 @@ const useBookmarkManager = create((set) => {
      showAll : () => set(state => ({isShowArchived : false, isShowAll : true})), 
     toggleSortDropdown : () => set(state => ({showSortDropdown : !state.showSortDropdown})), 
     handleSortChange : (sort) => set(state => ({sort : sort})),
+    handleAddSelectedTag : (tags) => set(state => ({selectedTag : [...tags], isShowAll: false, isShowArchived : false})),
   };
 });
 export default useBookmarkManager;

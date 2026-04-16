@@ -23,11 +23,10 @@ function App() {
   return (
     <main className="bg-neutral100 dark:bg-neutral900D w-full min-h-screen flex font-manrope">
       {isSidebarOpen && <SidebarSmall/>}
-      <AddBookmarkModal/>
       <Sidebar/>
       <div className="flex flex-col flex-1">
         <Navbar/>
-        <div className="flex flex-col gap-5 px-4 pt-6 pb-16 md:px-8 md:pt-8 md:mt-17 lg:ml-74 lg:mt-15">
+        <div className="flex flex-col gap-5 px-4 pt-6 pb-16 mt-15 md:px-8 md:pt-8 md:mt-17 lg:ml-74 lg:mt-15">
           <Header/>
           <Bookmarks/>
         </div>
