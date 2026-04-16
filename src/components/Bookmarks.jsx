@@ -12,17 +12,27 @@ function Bookmarks() {
     let sorted = bookmarkData.sort((a,b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     const [bookmarks, setBookMarks ] = useState(sorted);
 
-    useEffect(()=> {
-      if(isShowAll){
-        setBookMarks(bookmarkData)
-      }
-      if(isShowArchived){
-        setBookMarks(prev => {
-          let filtered = [...prev].filter(bookmark => bookmark.isArchived)
-          return filtered
-        })
-      }
-    }, [isShowAll, isShowArchived])
+  
+
+    useEffect(() => {
+  let filtered = [...bookmarkData];
+
+  if (isShowArchived) {
+    filtered = filtered.filter(bookmark => bookmark.isArchived);
+  }
+
+  if (selectedTag.length > 0) {
+    filtered = filtered.filter(bookmark =>
+      selectedTag.every(tag => bookmark.tags.includes(tag))
+    );
+  }
+
+  if (isShowAll) {
+    filtered = [...bookmarkData];
+  }
+
+  setBookMarks(filtered);
+}, [isShowAll, isShowArchived, selectedTag, bookmarkData]);
 
     useEffect(()=>{
       if(sort === 'Recently added'){

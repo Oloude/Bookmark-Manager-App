@@ -31,8 +31,8 @@ const useBookmarkManager = create((set) => {
       set((state) => ({
         showCardActionsDropdown: state.showCardActionsDropdown === id ? null : id ,
       })),
-     showArchived : () => set(state => ({isShowArchived : true, isShowAll : false})), 
-     showAll : () => set(state => ({isShowArchived : false, isShowAll : true})), 
+     showArchived : () => set(state => ({isShowArchived : true, isShowAll : false, selectedTag: []})), 
+     showAll : () => set(state => ({isShowArchived : false, isShowAll : true, selectedTag: []})), 
     toggleSortDropdown : () => set(state => ({showSortDropdown : !state.showSortDropdown})), 
     handleSortChange : (sort) => set(state => ({sort : sort})),
     handleAddSelectedTag : (tags) => set(state => ({selectedTag : [...tags], isShowAll: false, isShowArchived : false})),
