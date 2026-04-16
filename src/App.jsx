@@ -23,7 +23,7 @@ function App() {
   return (
     <main className="bg-neutral100 dark:bg-neutral900D w-full min-h-screen flex font-manrope">
       {isSidebarOpen && <SidebarSmall/>}
-      <EditBookmarkModal/>
+      <AddBookmarkModal/>
       <Sidebar/>
       <div className="flex flex-col flex-1">
         <Navbar/>
